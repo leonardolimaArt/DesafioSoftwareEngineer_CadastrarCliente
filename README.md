@@ -6,6 +6,8 @@
 - DotNet 7/Asp.Net e EntityFramework
 - SQL Server
 
+#### a
+
 ### Diagrama de Design da Solução do projeto:
 - Arquivo: https://drive.google.com/file/d/1vYOgUSXAyKnGIBiNwuLGGQzlHyZQDlDt/view?usp=sharing
 - Abrir com: https://app.diagrams.net/
