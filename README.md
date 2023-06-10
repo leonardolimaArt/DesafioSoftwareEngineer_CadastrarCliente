@@ -7,11 +7,11 @@
 - SQL Server
 
 #### Instalação
-1.Baixar ou Clonar o projeto
-2.Abrir o Visual Studio
-3.Abrir um projeto ou uma solução
-4.Navegar até a pasta do projeto e abrir o arquivo .sln
-5.Após a leitura do projeto, teclar F5 para Executar
+1. Baixar ou Clonar o projeto
+2. Abrir o Visual Studio
+3. Abrir um projeto ou uma solução
+4. Navegar até a pasta do projeto e abrir o arquivo .sln
+5. Após a leitura do projeto, teclar F5 para Executar
 
 ### Diagrama de Design da Solução do projeto:
 - Arquivo: https://drive.google.com/file/d/1vYOgUSXAyKnGIBiNwuLGGQzlHyZQDlDt/view?usp=sharing
