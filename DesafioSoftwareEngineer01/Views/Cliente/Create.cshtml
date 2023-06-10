@@ -1,0 +1,153 @@
+﻿@model DesafioSoftwareEngineer01.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastro de Cliente</h1>
+
+<div>
+    <a asp-action="Index">Voltar ao Início</a>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <h4>Dados</h4>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Nome</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">E-mail</label>
+                <input asp-for="Email" type="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroTelefone" class="control-label">Telefone</label>
+                <input asp-for="NumeroTelefone" oninput="formatarNumero(this)" minlength="15" maxlength="15" class="form-control" />
+                <span asp-validation-for="NumeroTelefone" class="text-danger"></span>
+            </div>
+            <p><h4>Endereço</h4></p>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Cep" for="cep" class="control-label"></label>
+                <input asp-for="EnderecoCliente.Cep" type="text" maxlength="9" oninput="formatarCep(this)" id="cep" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Cep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Logradouro" class="control-label"></label>
+                <input asp-for="EnderecoCliente.Logradouro" id="logradouro" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Logradouro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Complemento" class="control-label"></label>
+                <input asp-for="EnderecoCliente.Complemento" id="complemento" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Complemento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Bairro" class="control-label"></label>
+                <input asp-for="EnderecoCliente.Bairro" id="bairro" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Localidade" class="control-label"></label>
+                <input asp-for="EnderecoCliente.Localidade" id="localidade" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Localidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Uf" class="control-label">UF</label>
+                <input asp-for="EnderecoCliente.Uf" id="uf" maxlength="2" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Uf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Ibge" class="control-label">IBGE</label>
+                <input asp-for="EnderecoCliente.Ibge" id="ibge" oninput="formatarNum(this)" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Ibge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Gia" class="control-label">GIA</label>
+                <input asp-for="EnderecoCliente.Gia" id="gia" oninput="formatarNum(this)" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Gia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Ddd" class="control-label">DDD</label>
+                <input asp-for="EnderecoCliente.Ddd" id="ddd" oninput="formatarNum(this)" maxlength="2" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Ddd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoCliente.Siafi" class="control-label"></label>
+                <input asp-for="EnderecoCliente.Siafi" id="siafi" oninput="formatarNum(this)" class="form-control" />
+                <span asp-validation-for="EnderecoCliente.Siafi" class="text-danger"></span>
+            </div>
+            <p>
+                <div class="form-group">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </p>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+        <script>
+            var timeoutId;
+
+            $(function () {
+                $("#cep").on("input", function () {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(function () {
+                        var cep = $("#cep").val();
+                        if (cep.length >= 8) {
+                            $.ajax({
+                                url: "/Cliente/GetEnderecoPartial",
+                                type: "POST",
+                                data: { cep: cep },
+                                success: function (result) {
+                                    if(result.cep == null){
+                                        $("#cep").val("CEP INVÁLIDO!");
+                                    }else{
+                                        $("#logradouro").val(result.logradouro);
+                                        $("#bairro").val(result.bairro);
+                                        $("#localidade").val(result.localidade);
+                                        $("#complemento").val(result.complemento);
+                                        $("#uf").val(result.uf);
+                                        $("#ibge").val(result.ibge);
+                                        $("#gia").val(result.gia);
+                                        $("#ddd").val(result.ddd);
+                                        $("#siafi").val(result.siafi);
+                                    }
+                                }
+                            });
+                        }
+                    }, 1);
+                });
+            });
+        </script>
+        <script>
+            function formatarCep(input) {
+                let cep = input.value.replace(/\D/g, '');
+                cep = cep.replace(/(\d{5})(\d)/, '$1-$2');
+                input.value = cep;
+            }
+        </script>
+        <script>
+            function formatarNumero(input) {
+                let numeroLimpo = input.value.replace(/\D/g, '');
+                let numeroFormatado = '(' + numeroLimpo.slice(0, 2) + ') ' + numeroLimpo.slice(2, 7) + '-' + numeroLimpo.slice(7);
+                input.value = numeroFormatado;
+            }
+        </script>
+        <script>
+            function formatarNum(input) {
+                let formato = input.value.replace(/\D/g, '');
+                input.value = formato;
+            }
+        </script>
+    }
+}

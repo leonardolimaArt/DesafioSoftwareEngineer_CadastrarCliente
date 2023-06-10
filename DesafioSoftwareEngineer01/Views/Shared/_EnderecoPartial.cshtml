@@ -1,0 +1,16 @@
+﻿@model Endereco
+
+@if (Model != null)
+{
+        <h2>Detalhes do endereço</h2>
+        <p><strong>CEP:</strong> @Model.Cep</p>
+        <p><strong>Logradouro:</strong> @Model.Logradouro</p>
+        <p><strong>Complemento:</strong> @Model.Complemento</p>
+        <p><strong>Bairro:</strong> @Model.Bairro</p>
+        <p><strong>Localidade:</strong> @Model.Localidade</p>
+        <p><strong>UF:</strong> @Model.Uf</p>
+        <p><strong>IBGE:</strong> @Model.Ibge</p>
+        <p><strong>GIA:</strong> @Model.Gia</p>
+        <p><strong>DDD:</strong> @Model.Ddd</p>
+        <p><strong>SIAFI:</strong> @Model.Siafi</p>
+}
