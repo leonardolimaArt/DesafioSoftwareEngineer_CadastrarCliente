@@ -12,7 +12,7 @@
 3. Abrir um projeto ou uma solução
 4. Navegar até a pasta do projeto e abrir o arquivo .sln
 5. Configurar a classe DbClassContext, substituir a connectionString pela string de conxeção do seu serivdor e banco.
-5.1 Para buscar a string de conexão: Exibir>Server Explorar>Conexões de Dados>Propriedados>Cadeia de Conexão
+6. Para buscar a string de conexão: Exibir>Server Explorar>Conexões de Dados>Propriedados>Cadeia de Conexão
 7. Abrir console de gerenciador de pacotes: Exibir>Outras Janelas>Console de Gerenciador de Pacotes
 8. Digitar Add-Migration "nome de sua preferencia", para fazer a migração e relacionamento do projeto para o banco de dados.
 9. Digitar Uptade-Database, para atualizar o banco de dados para o modelo de relacionamento do projeto.
