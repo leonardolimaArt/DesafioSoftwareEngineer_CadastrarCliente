@@ -6,6 +6,6 @@
 - AspNet EntityFramework/DotNet7
 - SQL Server
 
-### Diagram de Design da Solução do projeto:
+### Diagrama de Design da Solução do projeto:
 Abrir com https://app.diagrams.net/
 Arquivo: https://drive.google.com/file/d/1vYOgUSXAyKnGIBiNwuLGGQzlHyZQDlDt/view?usp=sharing
