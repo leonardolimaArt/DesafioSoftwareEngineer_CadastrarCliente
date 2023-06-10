@@ -14,11 +14,9 @@
 5. Ligar servidor SQL Server
 6. Abrir console de gerenciador de pacotes: Exibir>Outras Janelas>Console de Gerenciador de Pacotes
 7. Digitar Add-Migration "nome de sua preferencia", para fazer a migração e relacionamento do projeto para o banco de dados.
-8. Buscar a string de conexão: Exibir>Server Explorar>Conexões de Dados>Propriedades>Cadeia de Conexão
+8. Digitar Uptade-Database, para atualizar o banco de dados para o modelo de relacionamento do projeto
 9. Configurar a classe DbClassContext, substituir a connectionString pela string de conxeção do seu serivdor e banco. 
-10. Abrir console de gerenciador de pacotes: Exibir>Outras Janelas>Console de Gerenciador de Pacotes
-11. Digitar Uptade-Database, para atualizar o banco de dados para o modelo de relacionamento do projeto
-12. Após a leitura do projeto, pressionar F5 para Executar o projeto
+10. Após a leitura do projeto, pressionar F5 para Executar o projeto
 
 ### Diagrama de Design da Solução do projeto:
 - Arquivo: https://drive.google.com/file/d/1vYOgUSXAyKnGIBiNwuLGGQzlHyZQDlDt/view?usp=sharing
