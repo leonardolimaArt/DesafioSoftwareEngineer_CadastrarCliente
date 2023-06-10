@@ -1,6 +1,6 @@
 # Desafio Software Engineer - Bemol Digital
 
-## Configurar o projeto
+## Requisitos e Documentos
 ### Requisitos:
 - Visual Studio 2022
 - DotNet 7/Asp.Net e EntityFramework
