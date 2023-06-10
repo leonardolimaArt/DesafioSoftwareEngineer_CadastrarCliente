@@ -1,0 +1,14 @@
+1. A solução deve ser disponibilizada em Cloud ou On-premise?
+R: Cloud. Utilizando essa infraestrutura pode atender melhor o contexto de ominichannel.
+
+2. Considerando a participação de 4 pessoas técnicas para o desenvolvimento dessa solução, responda qual ferramenta acreditas ser apropriada para o controle de tarefas da equipe, a ferramenta é ágil? 
+R: Notion, Jira, Trello ou o Azure DevOps.
+
+3. Você se sente capaz de liderar esta equipe? Por quê? 
+R:Não, acredito que os resposáveis a liderar equipes são funcionarios de nível senior.
+
+4. Se pudesse sugerir uma melhoria, mudança ou oportunidade. O que seria? 
+R: O desafio ser mais direto.
+
+5. Acha válido esse desafio para o processo que está participando?
+R: Sim, é possivel avaliar o conhecimento e habilidades técnicas de quem está participando. Não só o avaliador avaliar o candidato, como o proprio candidato se auto-avaliar.
