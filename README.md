@@ -3,7 +3,7 @@
 ## Configurar o projeto
 ### Requisitos:
 - Visual Studio 2022
-- AspNet/DotNet7
+- AspNet EntityFramework/DotNet7
 - SQL Server
 
 ### Diagram de Design da Solução do projeto:
