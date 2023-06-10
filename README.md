@@ -2,9 +2,9 @@
 
 ## Configurar o projeto
 ### Requisitos:
--Visual Studio 2022
--AspNet/DotNet7
--SQL Server
+- Visual Studio 2022,
+- AspNet/DotNet7,
+- SQL Server
 
 ### Diagram de Design da Solução do projeto:
 Abrir com https://app.diagrams.net/
